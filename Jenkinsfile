@@ -3,9 +3,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh('''#!C:\Program Files\Git\git-bash.exe
-                echo "I am in bash"
-                ''')
+                bat 'echo "Hello World"'
+                bat '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
             }
         }
     }
